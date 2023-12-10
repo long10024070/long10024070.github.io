@@ -13,7 +13,12 @@ jobs:
       run:
         shell: bash
     steps:
+      - uses: actions/checkout@v3
+      # - run: sudo apt update
+      # - run: sudo apt install find
       - name: Run proselint
-        run: git ls-files | proselint
+        run: pip install proselint
+      - run: find -iname "*.md" | xargs proselint
       - name: Run write-good
-        run: git ls-files | write-good
+        run: npm install -g write-good
+      - run: find -iname "*.md" | xargs write-good
