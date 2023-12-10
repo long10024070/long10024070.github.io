@@ -14,6 +14,6 @@ jobs:
         shell: bash
     steps:
       - name: Run proselint
-        run: git ls-files | proselint
+        run: proselint **/*.md
       - name: Run write-good
-        run: git ls-files | write-good
+        run: write-good **/*.md
