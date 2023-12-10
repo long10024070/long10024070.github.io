@@ -1,3 +1,3 @@
 # long10024070.github.io
 
-More word part one
+This is text from branch clone
