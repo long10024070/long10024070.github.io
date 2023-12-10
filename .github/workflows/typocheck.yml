@@ -14,8 +14,8 @@ jobs:
         shell: bash
     steps:
       - uses: actions/checkout@v3
-      - run: sudo apt update
-      - run: sudo apt install find
+      # - run: sudo apt update
+      # - run: sudo apt install find
       - name: Run proselint
         run: pip install proselint
       - run: find -iname "*.md" | xargs proselint
