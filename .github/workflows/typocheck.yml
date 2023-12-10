@@ -1,0 +1,18 @@
+on:
+  - pull_request
+
+name: "Trigger: Pull action"
+permissions: {}
+
+jobs:
+  typocheck:
+    name: Typocheck
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - name: Run proselint
+        run: git ls-files | proselint
+      - name: Run write-good
+        run: git ls-files | write-good
