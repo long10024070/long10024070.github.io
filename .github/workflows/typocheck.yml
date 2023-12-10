@@ -15,6 +15,10 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Run proselint
+        uses: amperser/proselint@main
+        run: pip install proselint -y
         run: proselint **/*.md
       - name: Run write-good
+        uses: btford/write-good@master
+        run: npm install write-good -y
         run: write-good **/*.md
