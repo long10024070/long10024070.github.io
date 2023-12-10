@@ -14,9 +14,10 @@ jobs:
         shell: bash
     steps:
       - uses: actions/checkout@v3
+      - run: sudo apt install find -y
       - name: Run proselint
         run: pip install proselint
-      - run: proselint **/*.md
+      - run: find -iname "*.md" | xargs proselint
       - name: Run write-good
-        run: npm install write-good
+        run: npm install -g write-good
       - run: write-good **/*.md
