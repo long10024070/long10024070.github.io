@@ -21,4 +21,4 @@ jobs:
       - run: find -iname "*.md" | xargs proselint
       - name: Run write-good
         run: npm install -g write-good
-      - run: write-good **/*.md
+      - run: find -iname "*.md" | xargs write-good
